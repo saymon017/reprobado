@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer('stock');
             $table->string('image');
             $table->decimal('sell_price',12,2);
-            $table->string('status', ['ACTIVA', 'DESACTIVA'])->default('ACTIVA'); 
+            $table->enum('status', ['ACTIVA', 'DESACTIVA'])->default('ACTIVA');
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories');
             $table->unsignedBigInteger('provider_id');
